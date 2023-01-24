@@ -18,7 +18,7 @@ def login_with_service_account():
     settings = {
         "client_config_backend": "service",
         "service_config": {
-            "client_json_file_path": st.secrets["service_path"],
+            "client_json_dict": st.secrets["gcp_service_account"],
         }
     }
     gauth = GoogleAuth(settings=settings)
