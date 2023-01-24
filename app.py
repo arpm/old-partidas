@@ -64,7 +64,7 @@ rows = run_query(f'SELECT * FROM "{url}"')
 
 st.title('Partidas')
 
-partidas = {row[1]: {'unidad': row[0], 'cantidad': row[2]} for row in rows}
+partidas = {row[1]: {'unidad': row[2], 'cantidad': row[3]} for row in rows}
 
 partida = st.selectbox(
     'Partidas disponibles',
