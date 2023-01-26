@@ -4,6 +4,8 @@ from gsheetsdb import connect
 from pydrive2.drive import GoogleDrive
 from pydrive2.auth import GoogleAuth
 
+st.set_page_config(page_title="Partidas", layout="wide")
+
 def login_with_service_account():
     """
     Google Drive service with a service account.
@@ -49,10 +51,10 @@ file_list = drive.ListFile(
 
 file_list = {file["title"]: file["id"] for file in file_list}
 
-st.title('Hojas')
+st.title('Proyectos')
 
 hoja = st.selectbox(
-    'Hojas disponibles',
+    'Proyectos disponibles',
     file_list.keys(),
     index=0
 )
